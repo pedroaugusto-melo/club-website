@@ -1,0 +1,411 @@
+/* General Setup */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+.divider {
+    width: 20%;
+    margin: 3rem auto;
+    border-top: 0.2rem solid black;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 2.5rem;
+    background-color: #001A24;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+header h1 {
+    font-family: 'Arvo', serif;
+    color: #D95323;
+}
+
+header nav {
+    color: #0388A6;
+    text-decoration: underline;
+}
+
+header .desktop {
+    width: 40%;
+}
+
+header .desktop ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .mobile {
+    display: none;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 480px) and (min-width: 220px){
+    header .desktop {
+        display: none;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header .mobile {
+        display: flex;
+        align-items: center;
+        width: 40px;
+        height: 40px;
+    }
+
+    header .mobile img {
+        width: 100%;
+        height: 50%;
+    }
+
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 770px) {
+    header .desktop {
+        width: 25%;
+    }
+}
+
+/* INTRO */
+
+.intro {
+    width: 100%;
+    height: 125vmin;
+    padding: 2rem;
+    background-image: url("../images/intro.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-content: flex-start;
+    text-align: left;
+}
+
+.intro .content {
+    background-color: black;
+    opacity: 0.75;
+    padding: 0.5rem;
+}
+
+.intro h2 {
+    margin-bottom: 0.25rem;
+    font-weight: 800;
+}
+
+/* METHOD */
+
+.method {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.method .icons {
+    display: flex;
+}
+
+/* Mobile and Tablet */
+
+@media only screen and (max-width: 770px) {
+    .method h4 {
+        margin-top: 0.5rem;
+    }
+
+    .icons img {
+        max-width: 250px;
+        width: 80%;
+    }
+
+    .icons figcaption {
+        margin-top: 1rem;
+        font-weight: 600;
+    }
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 480px) and (min-width: 220px){
+    .method .icons{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .icons figure {
+        width: 100%;
+        flex-grow: 1;
+        margin-top: 4rem;
+    }
+
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 480px) and (max-width: 770px) {
+    .method .icons{
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .icons figure {
+        width: 300px;
+        flex-grow: 1;
+        margin-top: 4rem;
+    }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 770px) {
+    .method h4 {
+        margin-bottom: 2rem;
+    }
+
+    .method .icons {
+        width: 100%;
+        justify-content: space-around;
+        align-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .method figure {
+        margin-top: 4rem;
+    }
+
+    .icons img {
+        width: 450px;
+    }
+
+    .method figcaption {
+        margin-top: 3rem;
+    }
+}
+
+/* TEAM */
+
+.team {
+    display: flex;
+    flex-direction: column;
+}
+
+.team .person {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    justify-content: flex-end;
+    padding: 1.5rem;
+    text-align: left;
+    color: white;
+    border: 0.2rem solid #001A24;
+}
+
+.person h4 {
+    background-color: black;
+    opacity: 0.75;
+    padding: 0.5rem;
+}
+
+#swim-coach {
+    background-image: url("../images/swim-rinke.jpg");
+}
+
+#run-coach {
+    background-image: url("../images/run-alexander.jpg");
+}
+
+#bike-coach {
+    background-image: url("../images/bike-chris.jpg");
+}
+
+#swim-coach, #run-coach, #bike-coach {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 480px) and (min-width: 220px){
+    .team .people{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 3rem;
+    }
+
+    .team .person {
+        width: 80%;
+        height: 25rem;
+    }
+
+    .team .person {
+        margin-top: 3rem;
+    }
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 480px) and (max-width: 770px) {
+    .team .people {
+        margin: 3rem auto;
+        width: 90%;
+        height: 52.5rem;
+        display: grid;
+        grid-template: 2fr 3fr / repeat(4, 1fr);
+    }
+
+    .team .person {
+        border: none;
+    }
+
+    #swim-coach {
+        grid-column: 1 / span 2;
+    }
+
+    #run-coach {
+        grid-column: 3 / span 2;
+    }
+
+    #bike-coach {
+        grid-column: 1 / span 4;
+    }
+    
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 770px) {
+    .team .people {
+        margin: 3rem auto;
+        width: 90%;
+        height: 60rem;
+        display: grid;
+        grid-template: 1fr / repeat(3, 1fr);
+    }
+
+    .team .person {
+        border: none;
+    }
+}
+
+/* LOCATION */
+
+.location {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 480px) and (min-width: 220px){
+    .location {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .location img {
+        width: 80%;
+        margin-top: 3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .location h4 {
+        width: 80%;
+        margin: 2rem auto;
+    }
+}
+
+/* Tablet */
+
+@media only screen and (min-width: 480px) and (max-width: 770px) {
+    .location .content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 2.5rem 0;
+    }
+
+    .location img {
+        width: 50%;
+    }
+
+    .location h4 {
+        padding: 0.5rem;
+    }
+}
+
+/* Desktop */
+
+@media only screen and (min-width: 770px) {
+    .location .content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 2.5rem 0;
+    }
+
+    .location img {
+        width: 50%;
+    }
+
+    .location h4 {
+        padding: 0.5rem;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #001A24;
+    color: #0388A6;
+    padding: 1.5rem;
+}
+
+footer h5 {
+    font-weight: 500;
+}
+
+/* Mobile */
+
+@media only screen and (max-width: 480px) and (min-width: 220px){
+    footer h3 {
+        font-size: 1rem;
+    }
+
+    footer h5 {
+        font-size: 0.75rem;
+    }
+
+}
